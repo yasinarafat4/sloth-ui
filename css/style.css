@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap");
 
-/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,19 +8,173 @@
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  line-height: 1.5;
-  color: #000;
 }
 
-.hero h1 {
-  font-size: 60px;
-  color: #1e293b;
-  font-weight: 800;
+/* Navbar */
+.navbar {
+  padding: 16px 0;
 }
 
-/* Reusable container */
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .container {
-  max-width: 1216px;
-  margin: 0 auto;
-  padding: 0 16px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+/* Logo Image */
+.logo img {
+  /* width: 109px;
+  height: 32px; */
+  object-fit: contain;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+}
+
+.nav a {
+  color: #475569;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #4f46e5;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Button */
+.btn-outline {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #4f46e5;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* =====================
+   Mobile Menu Toggle
+===================== */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* =====================
+   Mobile Styles
+===================== */
+@media (max-width: 768px) {
+  /* Show hamburger icon */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Mobile menu wrapper styles */
+  .menu {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: #f8fafc;
+
+    /* Bottom shadow */
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.15);
+
+    /* Animation setup */
+    opacity: 0;
+    transform: translateY(-12px);
+    pointer-events: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  /* Show menu when checkbox is checked */
+  #menu-toggle:checked ~ .menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Navigation links in column */
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* Action buttons below nav links */
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Optional: full-width buttons on mobile */
+  .actions button {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  /* Container padding adjustment */
+  .container {
+    padding: 16px;
+  }
+
+  .navbar {
+    padding: 0;
+  }
 }
