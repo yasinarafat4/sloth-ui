@@ -1,0 +1,19 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* Reusable container */
+.container {
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
