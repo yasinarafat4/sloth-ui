@@ -41,14 +41,12 @@ body {
 }
 
 /* Navbar Styles */
-.navbar {
-  padding: 16px 0;
-}
 
 .nav-items {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 16px;
 }
 
 .menu {
@@ -103,6 +101,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 96px 0 0 0;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -251,14 +250,22 @@ body {
 
   /* Container padding adjustment */
   .container {
-    padding: 16px;
-  }
-
-  .navbar {
     padding: 0;
   }
 
+  .nav-items {
+    padding: 16px;
+  }
+
   /* Hero Section */
+  .hero {
+    padding: 64px 0 0 0;
+  }
+
+  .hero_contents {
+    padding: 0px 16px 0 16px;
+  }
+
   .hero_title {
     font-weight: 800;
     font-size: 36px;
