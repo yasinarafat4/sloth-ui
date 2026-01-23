@@ -34,6 +34,7 @@
 
   /* Font Weights */
   --fw-normal: 400;
+  --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
   --fw-extrabold: 800;
@@ -722,6 +723,98 @@
   margin-top: 8px;
 }
 
+/* Footer Section Styles */
+.section_footer {
+  background: #f8fafc;
+  padding: 64px 16px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 32px;
+}
+
+.footer-col h4 {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  line-height: 22px;
+  letter-spacing: -0.007em;
+  color: var(--color-text-main);
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-base);
+  line-height: 22px;
+  letter-spacing: -0.007em;
+  color: var(--color-text-muted);
+}
+
+.footer-col ul li a:hover {
+  color: var(--color-primary);
+}
+
+.footer-divider {
+  margin: 56px 0 32px;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.footer_bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.scroll-top {
+  margin: 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #cbd5f5;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: #475569;
+}
+
+.scroll-top:hover {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.copyright {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  line-height: 20px;
+  letter-spacing: -0.006em;
+  color: #94a3b8;
+}
+
 @media (max-width: 1024px) {
   /* Contact Section Styles */
   .location_grid {
@@ -1023,6 +1116,22 @@
     letter-spacing: -0.008em;
     color: var(--color-text-main);
   }
+
+  /* Footer Section Styles */
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer_bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
 }
 
 /* Only Mobile Devices */
@@ -1098,5 +1207,13 @@
     font-size: var(--fs-sm);
     line-height: 160%;
     color: var(--color-text-muted);
+  }
+
+  /* Contact Section Styles */
+  .location_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
   }
 }
