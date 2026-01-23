@@ -70,6 +70,20 @@
 }
 
 /* Navbar Styles */
+/* Sticky Header Base */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-white);
+  transition:
+    box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 20px var(--color-shadow);
+}
 
 .nav-items {
   display: flex;
@@ -222,37 +236,34 @@
   /* Show hamburger icon */
   .menu-icon {
     display: block;
+    border: none;
+    background: var(--color-white);
   }
 
-  /* Mobile menu wrapper styles */
   .menu {
     position: absolute;
     top: 75px;
     left: 0;
     width: 100%;
     background: var(--color-bg-mobile);
-
-    /* Bottom shadow */
     box-shadow: 0 12px 24px var(--color-shadow);
 
-    /* Animation setup */
-    opacity: 0;
-    transform: translateY(-12px);
-    pointer-events: none;
-
+    /* Animation setup: start state */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
     padding: 24px 0;
 
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease;
+    /* Transition properties */
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
   }
 
-  /* Show menu when checkbox is checked */
-  #menu-toggle:checked ~ .menu {
+  /* Active state  */
+  .menu.active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
