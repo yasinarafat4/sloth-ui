@@ -140,6 +140,18 @@
   gap: 8px;
 }
 
+.badge {
+  padding: 6px 12px;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-full);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  line-height: 20px;
+  letter-spacing: -0.006em;
+  color: var(--color-primary);
+  text-align: center;
+}
+
 /* Hero Section Styles */
 .section_hero {
   background-image: url("../assets/images/hero/background-wallpaper-gradient.png");
@@ -170,18 +182,6 @@
   max-width: 800px;
   flex-direction: column;
   gap: 24px;
-}
-
-.badge {
-  padding: 6px 12px;
-  background: var(--color-primary-light);
-  border-radius: var(--radius-full);
-  font-weight: var(--fw-semibold);
-  font-size: var(--fs-sm);
-  line-height: 20px;
-  letter-spacing: -0.006em;
-  color: var(--color-primary);
-  text-align: center;
 }
 
 .hero_title {
@@ -254,7 +254,7 @@
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  padding: 96px 0;
+  padding: 96px 16px;
 }
 
 .features_header {
@@ -424,27 +424,83 @@
 /* Client Section Styles */
 .client_section {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 64px;
+  padding: 96px 16px;
+}
+
+.client_header {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  max-width: 680px;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.client_title {
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-4xl);
+  line-height: 44px;
+  text-align: start;
+  letter-spacing: -0.014em;
+  color: var(--color-text-main);
+  margin-bottom: 16px;
+}
+
+.client_subtitle {
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-xl);
+  line-height: 160%;
+  text-align: start;
+  color: var(--color-text-muted);
+}
+
+.client_tabs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
 }
 
 .client_tabs_column {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .client_tab_item {
-  padding: 24px;
-  margin-bottom: 15px;
+  padding: 24px 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 4px;
+  border-left: 4px solid #e0e7ff;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.5;
+}
+
+.client_tab_item h3 {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  color: var(--color-text-muted);
+}
+
+.client_tab_item p {
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-base);
+  line-height: 160%;
+  color: var(--color-text-muted);
 }
 
 /* Active State with Blue Border */
 .client_tab_item.active {
-  border-color: #00a2ff;
-  background-color: rgba(0, 162, 255, 0.03);
-  opacity: 1;
+  border-color: var(--color-primary);
 }
 
 .client_tab_title {
@@ -460,13 +516,10 @@
   color: #a0a0a0;
 }
 
-.client_image_column {
-  flex: 1.2;
-}
-
 .client_image_column img {
   width: 100%;
-  border-radius: 30px;
+  max-height: 592px;
+  border-radius: 32px;
   display: block;
   transition:
     transform 0.5s ease,
@@ -537,10 +590,6 @@
   .actions button {
     width: 90%;
     max-width: 320px;
-  }
-
-  .container {
-    padding: 0;
   }
 
   .nav-items {
@@ -694,6 +743,24 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
+  }
+
+  /* Client Section Styles */
+  .client_section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+    padding: 96px 16px;
+  }
+
+  .client_tabs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
   }
 }
 
