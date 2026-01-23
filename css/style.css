@@ -588,7 +588,7 @@
   align-items: flex-start;
   padding: 24px;
   gap: 24px;
-  width: 384px;
+  max-width: 384px;
   height: 284px;
   background: var(--color-bg-mobile);
   border: 1px solid #e2e8f0;
@@ -647,6 +647,89 @@
   font-size: var(--fs-base);
   line-height: 160%;
   color: var(--color-text-muted);
+}
+
+/* Contact Section Styles */
+.section_contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 64px;
+  padding: 64px 16px;
+}
+
+.contact_header {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact_title {
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-4xl);
+  line-height: 44px;
+  text-align: start;
+  letter-spacing: -0.014em;
+  color: var(--color-text-main);
+}
+
+.contact_subtitle {
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-lg);
+  line-height: 160%;
+  text-align: start;
+  color: var(--color-text-muted);
+}
+
+.location_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
+.location_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+}
+
+.location_card img {
+  height: 24px;
+  width: 24px;
+}
+
+.location_content h3 {
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-xl);
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  color: var(--color-text-main);
+}
+
+.location_content p {
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-base);
+  line-height: 160%;
+  color: var(--color-text-main);
+  margin-top: 8px;
+}
+
+@media (max-width: 1024px) {
+  /* Contact Section Styles */
+  .location_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
+  }
 }
 
 /* =====================
@@ -912,9 +995,33 @@
     align-items: center;
     gap: 6.67px;
   }
+
   .rating img {
     height: 20px;
     width: 20px;
+  }
+
+  /* Contact Section Styles */
+  .location_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+  }
+
+  .location_card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .location_content h3 {
+    font-weight: var(--fw-extrabold);
+    font-size: var(--fs-lg);
+    line-height: 24px;
+    letter-spacing: -0.008em;
+    color: var(--color-text-main);
   }
 }
 
