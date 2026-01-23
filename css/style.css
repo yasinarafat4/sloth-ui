@@ -359,7 +359,6 @@
     justify-content: center;
   }
 
-  /* Logo Image scaling */
   .logo-item img {
     max-width: 96px;
     height: auto;
