@@ -101,8 +101,72 @@ const testimonials = [
     role: "Product Designer, slothUI",
     content:
       "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
+    rating: 5,
+    image: "../assets/images/testimonials/avatar-1.png",
+  },
+  {
+    name: "Azunyan U. Wu",
+    role: "CEO, nextlife.ai",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
+    rating: 3.5,
+    image: "../assets/images/testimonials/avatar-2.png",
+  },
+  {
+    name: "Mechatronics Yi",
+    role: "CTO, fin4win.ai",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
+    rating: 4,
+    image: "../assets/images/testimonials/avatar-3.png",
+  },
+  {
+    name: "Oarack Babama",
+    role: "Former President of US",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
+    rating: 5,
+    image: "../assets/images/testimonials/avatar-4.png",
+  },
+  {
+    name: "Saylor Twift",
+    role: "Famous Singer",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
     rating: 4.5,
-    image: "https://i.pravatar.cc/150?u=1",
+    image: "../assets/images/testimonials/avatar-5.png",
+  },
+  {
+    name: "Asuna Yuuki",
+    role: "Virtual Swordsman",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
+    rating: 4.5,
+    image: "../assets/images/testimonials/avatar-6.png",
+  },
+  {
+    name: "Boe Jiden",
+    role: "Former President Of Canada",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
+    rating: 2.5,
+    image: "../assets/images/testimonials/avatar-7.png",
+  },
+  {
+    name: "Vermillion D. Gray",
+    role: "CEO, hacklife.ai",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
+    rating: 5,
+    image: "../assets/images/testimonials/avatar-8.png",
+  },
+  {
+    name: "Zuckman Wu",
+    role: "CEO, tech4life.ai",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
+    rating: 4,
+    image: "../assets/images/testimonials/avatar-9.png",
   },
 ];
 
@@ -118,11 +182,11 @@ grid.innerHTML = testimonials
     .map((starIndex) => {
       let starSrc = "";
       if (item.rating >= starIndex) {
-        starSrc = "../assets/images/testimonials/star-filled.png";
+        starSrc = "../assets/images/testimonials/star-filled-icon.svg";
       } else if (item.rating > starIndex - 1) {
-        starSrc = "../assets/images/testimonials/star-half.png";
+        starSrc = "../assets/images/testimonials/star-half-icon.svg";
       } else {
-        starSrc = "../assets/images/testimonials/star-empty.png";
+        starSrc = "../assets/images/testimonials/star-empty-icon.svg";
       }
 
       return `<img src="${starSrc}" class="star_icon" alt="star rating">`;
@@ -133,8 +197,8 @@ grid.innerHTML = testimonials
     <div class="user">
       <img src="${item.image}" alt="${item.name}">
       <div class="info">
-        <strong>${item.name}</strong>
-        <span>${item.role}</span>
+        <h3>${item.name}</h3>
+        <p>${item.role}</p>
       </div>
     </div>
   </div>
