@@ -172,7 +172,7 @@ const testimonials = [
 
 const grid = document.getElementById("testimonial-grid");
 
-// "map" the data to HTML strings
+// "map" the data
 grid.innerHTML = testimonials
   .map(
     (item) => `
@@ -215,7 +215,7 @@ faqItems.forEach((item) => {
   question.addEventListener("click", () => {
     const isActive = item.classList.contains("active");
 
-    // Close other items (Optional: keeps UI clean)
+    // Close other items
     faqItems.forEach((otherItem) => {
       if (otherItem !== item) {
         otherItem.classList.remove("active");
@@ -227,7 +227,6 @@ faqItems.forEach((item) => {
     if (!isActive) {
       item.classList.add("active");
       const answer = item.querySelector(".faq_answer");
-      // Set maxHeight to scrollHeight for a smooth transition
       answer.style.maxHeight = answer.scrollHeight + "px";
     } else {
       item.classList.remove("active");
@@ -236,10 +235,13 @@ faqItems.forEach((item) => {
   });
 });
 
+
+
+
 // Footer Section Scroll to Top
 const scroll_top_btn = document.querySelector(".scroll_top");
 
-// Show/Hide button based on scroll position
+// Show/Hide button
 window.addEventListener("scroll", () => {
   if (window.scrollY > 400) {
     scroll_top_btn.style.opacity = "1";
