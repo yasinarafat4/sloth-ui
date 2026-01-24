@@ -725,14 +725,15 @@
 
 /* Footer Section Styles */
 .section_footer {
-  background: #f8fafc;
-  padding: 64px 16px;
+  position: relative;
+  padding: 96px 16px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 32px;
+  padding-bottom: 42px;
 }
 
 .footer-col h4 {
@@ -746,12 +747,9 @@
 
 .footer-col ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-col ul li {
-  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .footer-col ul li a {
@@ -765,19 +763,15 @@
 
 .footer-col ul li a:hover {
   color: var(--color-primary);
-}
-
-.footer-divider {
-  margin: 56px 0 32px;
-  height: 1px;
-  background: #e2e8f0;
+  text-decoration: underline;
 }
 
 .footer_bottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--color-border);
+  padding-top: 32px;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 16px;
 }
 
@@ -790,21 +784,32 @@
   color: #0f172a;
 }
 
-.scroll-top {
-  margin: 0 auto;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid #cbd5f5;
-  background: transparent;
+.scroll_top {
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  transform: translateX(-50%);
   cursor: pointer;
-  font-size: 18px;
-  color: #475569;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  transition: background 0.4s ease-in-out;
 }
 
-.scroll-top:hover {
-  background: #eef2ff;
-  color: #4338ca;
+.scroll_top:hover {
+  background: var(--color-primary);
+}
+
+.scroll_top img {
+  height: 24px;
+  width: 24px;
+}
+
+.scroll_top:hover img {
+  filter: brightness(0) invert(1);
 }
 
 .copyright {
@@ -906,7 +911,7 @@
 
   .hero_title {
     font-weight: 800;
-    font-size: var(--fs-xl);
+    font-size: var(--fs-4xl);
     line-height: 44px;
     text-align: center;
     letter-spacing: -0.014em;
@@ -1118,6 +1123,10 @@
   }
 
   /* Footer Section Styles */
+  .section_footer {
+    position: relative;
+    padding: 64px 16px;
+  }
 
   .footer-grid {
     display: grid;
@@ -1126,11 +1135,19 @@
   }
 
   .footer_bottom {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 16px;
+    margin-bottom: 82px;
+  }
+
+  .scroll_top {
+    position: absolute;
+    left: 50%;
+    bottom: 64px;
+    transform: translateX(-50%);
   }
 }
 

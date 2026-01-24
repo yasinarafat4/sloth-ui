@@ -205,3 +205,25 @@ grid.innerHTML = testimonials
 `,
   )
   .join("");
+
+// Footer Section Scroll to Top
+const scroll_top_btn = document.querySelector(".scroll_top");
+
+// Show/Hide button based on scroll position
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    scroll_top_btn.style.opacity = "1";
+    scroll_top_btn.style.pointerEvents = "auto";
+  } else {
+    scroll_top_btn.style.opacity = "0";
+    scroll_top_btn.style.pointerEvents = "none";
+  }
+});
+
+// Smooth Scroll
+scroll_top_btn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
