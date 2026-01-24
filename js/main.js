@@ -206,6 +206,36 @@ grid.innerHTML = testimonials
   )
   .join("");
 
+// FAQs Section
+const faqItems = document.querySelectorAll(".faq_item");
+
+faqItems.forEach((item) => {
+  const question = item.querySelector(".faq_question");
+
+  question.addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+
+    // Close other items (Optional: keeps UI clean)
+    faqItems.forEach((otherItem) => {
+      if (otherItem !== item) {
+        otherItem.classList.remove("active");
+        otherItem.querySelector(".faq_answer").style.maxHeight = null;
+      }
+    });
+
+    // Toggle current item
+    if (!isActive) {
+      item.classList.add("active");
+      const answer = item.querySelector(".faq_answer");
+      // Set maxHeight to scrollHeight for a smooth transition
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      item.classList.remove("active");
+      item.querySelector(".faq_answer").style.maxHeight = null;
+    }
+  });
+});
+
 // Footer Section Scroll to Top
 const scroll_top_btn = document.querySelector(".scroll_top");
 
