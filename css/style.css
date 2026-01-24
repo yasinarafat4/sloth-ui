@@ -854,24 +854,27 @@
 .section_cta {
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 653px;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   padding: 64px 16px;
   background: var(--color-primary-light);
 }
 
+.cta_container {
+  padding: 64px 16px;
+}
+
 .cta_wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  min-height: 525px;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  align-items: start;
+  justify-content: start;
   gap: 96px;
+  margin-left: 64px;
 }
 
 .cta_content {
   display: flex;
+  max-width: 560px;
   flex-direction: column;
   gap: 24px;
 }
@@ -901,14 +904,14 @@
 .cta-mockup-left-img {
   position: absolute;
   right: 150px;
-  height: 450px;
+  height: 100%;
   width: fit-content;
   top: 0;
 }
 
 .cta-mockup-right-img {
   position: absolute;
-  height: 450px;
+  height: 100%;
   width: fit-content;
   top: 0;
   right: 0;
@@ -1025,12 +1028,28 @@
   }
 
   /* CTA Section Styles */
-  /* .cta-mockup-img {
+  .cta_content {
+    display: flex;
+    max-width: 450px;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cta-mockup-left-img {
     position: absolute;
-    height: 950px;
-    bottom: -200px;
-    right: -120px;
-  } */
+    right: 110px;
+    height: 450px;
+    width: fit-content;
+    top: 0;
+  }
+
+  .cta-mockup-right-img {
+    position: absolute;
+    height: 450px;
+    width: fit-content;
+    top: 0;
+    right: 0;
+  }
 }
 
 /* =====================
@@ -1361,7 +1380,7 @@
     color: var(--color-text-muted);
   }
 
-  /* CTA Section Styles*/
+  /* CTA Section Styles */
   .cta_content {
     display: flex;
     flex-direction: column;
@@ -1391,9 +1410,16 @@
 
   .cta_wrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 48px;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .cta_content {
+    display: flex;
+    max-width: 380px;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .cta-mockup-desktop {
@@ -1519,6 +1545,14 @@
   }
 
   /* CTA Section Styles */
+  .cta_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    margin-left: 0;
+  }
+
   .cta_buttons {
     padding-top: 8px;
     display: flex;
