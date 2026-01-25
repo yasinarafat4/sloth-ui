@@ -176,11 +176,11 @@ grid.innerHTML = testimonials
     .map((starIndex) => {
       let starSrc = "";
       if (item.rating >= starIndex) {
-        starSrc = "../assets/images/testimonials/star-filled-icon.svg";
+        starSrc = "../assets/icons/testimonials/star-filled-icon.svg";
       } else if (item.rating > starIndex - 1) {
-        starSrc = "../assets/images/testimonials/star-half-icon.svg";
+        starSrc = "../assets/icons/testimonials/star-half-icon.svg";
       } else {
-        starSrc = "../assets/images/testimonials/star-empty-icon.svg";
+        starSrc = "../assets/icons/testimonials/star-empty-icon.svg";
       }
 
       return `<img src="${starSrc}" class="star_icon" alt="star rating">`;
@@ -200,7 +200,7 @@ grid.innerHTML = testimonials
   )
   .join("");
 
-// FAQs Section
+// FAQ Section
 const faqItems = document.querySelectorAll(".faq_item");
 
 faqItems.forEach((item) => {
