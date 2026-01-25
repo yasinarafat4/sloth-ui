@@ -1,37 +1,44 @@
-// Navbar Toggle
+// mobile menu
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 const header = document.querySelector(".navbar");
 const navLinks = document.querySelectorAll(".nav a");
 
-// Toggle the 'active' Class
+// toggle menu open/close
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
 });
 
-// Close the Mobile Menu
+// close menu when clicking nav links
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     mobileMenu.classList.remove("active");
   });
 });
 
-// Toggle Shadow on Header
+// close menu if click outside
+document.addEventListener('click', (e) => {
+  if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+    mobileMenu.classList.remove('active');
+  }
+});
+
+// add shadow to navbar on scroll
 window.addEventListener("scroll", () => {
   const isScrolled = window.scrollY > 20;
   header.classList.toggle("scrolled", isScrolled);
 });
 
-// Statistics Section Counter
+// counter animation
 const observerOptions = {
-  threshold: 0.5,
+  threshold: 0.5  // trigger when half visible
 };
 
 const counterObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       startCounter(entry.target);
-      observer.unobserve(entry.target);
+      observer.unobserve(entry.target);  // stop watching after it starts
     }
   });
 }, observerOptions);
@@ -50,45 +57,52 @@ const startCounter = (el) => {
     const progress = currentFrame / totalFrames;
     const currentVal = target * (progress * (2 - progress));
 
-    el.innerText = currentVal.toFixed(decimals) + suffix;
+    el.innerText = `${currentVal.toFixed(decimals)}${suffix}`;
 
     if (currentFrame < totalFrames) {
       requestAnimationFrame(animate);
     } else {
-      el.innerText = target.toFixed(decimals) + suffix;
+      el.innerText = `${target.toFixed(decimals)}${suffix}`;
     }
   };
 
   requestAnimationFrame(animate);
-}
+}; 
 
 document.querySelectorAll(".counter").forEach((counter) => {
   counterObserver.observe(counter);
 });
 
-// Client Section
+// switch images on click
 const client_tabs = document.querySelectorAll(".client_tab_item");
 const client_display_img = document.getElementById("client_main_img");
 
-client_tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    client_tabs.forEach((item) => item.classList.remove("active"));
-    tab.classList.add("active");
-    const client_new_src = tab.getAttribute("data_image");
+client_tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // remove active from all tabs
+    client_tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    
+    const newImageSrc = tab.getAttribute('data_image');
+    
+    // fade out current image
+    Object.assign(client_display_img.style, {
+      opacity: '0',
+      transform: 'scale(0.98)'
+    });
 
-    // Transition for Image
-    client_display_img.style.opacity = "0";
-    client_display_img.style.transform = "scale(0.98)";
-
+    // swap image and fade in
     setTimeout(() => {
-      client_display_img.src = client_new_src;
-      client_display_img.style.opacity = "1";
-      client_display_img.style.transform = "scale(1)";
+      client_display_img.src = newImageSrc;
+      Object.assign(client_display_img.style, {
+        opacity: '1',
+        transform: 'scale(1)'
+      });
     }, 250);
   });
 });
 
-//  Testimonial Section
+// testimonials data
 const testimonials = [
   {
     name: "X_AE_A-13",
@@ -96,7 +110,7 @@ const testimonials = [
     content:
       "Lorem ipsum dolor sit amet, consectetur ad-zzz-ing elit. Proin vel urna at metus tempor mattis, or not, whatever.",
     rating: 5,
-    image: "../assets/images/testimonials/avatar-1.png",
+    image: "/assets/images/testimonials/avatar-1.png",
   },
   {
     name: "Azunyan U. Wu",
@@ -104,7 +118,7 @@ const testimonials = [
     content:
       "Posuere urna nec tincidunt praesent semper feugiat nibh sed. Velit dignissim sodales ut eu.",
     rating: 3.5,
-    image: "../assets/images/testimonials/avatar-2.png",
+    image: "/assets/images/testimonials/avatar-2.png"
   },
   {
     name: "Mechatronics Yi",
@@ -112,7 +126,7 @@ const testimonials = [
     content:
       "Sit amet est placerat in. Blandit cursus risus at ultrices mi tempus imperdiet. Volutpat commodo sed egestas egestas fringilla phasellus. Tincidunt eget nullam non nisi.",
     rating: 4,
-    image: "../assets/images/testimonials/avatar-3.png",
+    image: "/assets/images/testimonials/avatar-3.png",
   },
   {
     name: "Oarack Babama",
@@ -120,7 +134,7 @@ const testimonials = [
     content:
       "Nisi porta lorem mollis aliquam ut porttitor leo. Sed odio morbi quis commodo. Arcu non odio euismod lacinia at quis. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae.",
     rating: 5,
-    image: "../assets/images/testimonials/avatar-4.png",
+    image: "/assets/images/testimonials/avatar-4.png"
   },
   {
     name: "Saylor Twift",
@@ -128,15 +142,15 @@ const testimonials = [
     content:
       "Accumsan tortor posuere ac ut consequat. Quis varius quam quisque id diam vel. Commodo odio aenean sed adipiscing diam donec adipiscing. Vel pharetra vel turpis nunc eget.",
     rating: 4.5,
-    image: "../assets/images/testimonials/avatar-5.png",
+    image: "/assets/images/testimonials/avatar-5.png",
   },
   {
     name: "Asuna Yuuki",
     role: "Virtual Swordsman",
     content:
-      "Venenatis cras sed felis eget velit aliquet. Velit scelerisque in dictum non consectetur. Felis eget velit aliquet sagittis. Ultricies integer quis auctor elit sed vulputate mi. ",
+      "Venenatis cras sed felis eget velit aliquet. Velit scelerisque in dictum non consectetur. Felis eget velit aliquet sagittis. Ultricies integer quis auctor elit sed vulputate mi. ",
     rating: 4.5,
-    image: "../assets/images/testimonials/avatar-6.png",
+    image: "/assets/images/testimonials/avatar-6.png"
   },
   {
     name: "Boe Jiden",
@@ -144,7 +158,7 @@ const testimonials = [
     content:
       "Sagittis eu volutpat odio facilisis mauris sit amet massa. Urna et pharetra pharetra massa.",
     rating: 2.5,
-    image: "../assets/images/testimonials/avatar-7.png",
+    image: "/assets/images/testimonials/avatar-7.png",
   },
   {
     name: "Vermillion D. Gray",
@@ -152,7 +166,7 @@ const testimonials = [
     content:
       "Cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Nec nam aliquam sem et tortor consequat id porta nibh. Viverra suspendisse. Lacus sed viverra tellus in hac habitasse platea dictumst. Elit at imperdiet dui accumsan.",
     rating: 5,
-    image: "../assets/images/testimonials/avatar-8.png",
+    image: "/assets/images/testimonials/avatar-8.png"
   },
   {
     name: "Zuckman Wu",
@@ -160,13 +174,13 @@ const testimonials = [
     content:
       "Viverra accumsan in nisl nisi scelerisque eu. Vitae congue eu consequat ac felis donec.",
     rating: 4,
-    image: "../assets/images/testimonials/avatar-9.png",
-  },
+    image: "/assets/images/testimonials/avatar-9.png",
+  }
 ];
 
 const grid = document.getElementById("testimonial-grid");
 
-// "map" the data
+// render all testimonials
 grid.innerHTML = testimonials
   .map(
     (item) => `
@@ -174,13 +188,14 @@ grid.innerHTML = testimonials
     <div class="rating">
   ${[1, 2, 3, 4, 5]
     .map((starIndex) => {
+      // figure out which star icon to show
       let starSrc = "";
       if (item.rating >= starIndex) {
-        starSrc = "../assets/icons/testimonials/star-filled-icon.svg";
+        starSrc = "/assets/icons/testimonials/star-filled-icon.svg";
       } else if (item.rating > starIndex - 1) {
-        starSrc = "../assets/icons/testimonials/star-half-icon.svg";
+        starSrc = "/assets/icons/testimonials/star-half-icon.svg";
       } else {
-        starSrc = "../assets/icons/testimonials/star-empty-icon.svg";
+        starSrc = "/assets/icons/testimonials/star-empty-icon.svg";
       }
 
       return `<img src="${starSrc}" class="star_icon" alt="star rating">`;
@@ -200,7 +215,7 @@ grid.innerHTML = testimonials
   )
   .join("");
 
-// FAQ Section
+// FAQ accordion
 const faqItems = document.querySelectorAll(".faq_item");
 
 faqItems.forEach((item) => {
@@ -209,7 +224,7 @@ faqItems.forEach((item) => {
   question.addEventListener("click", () => {
     const isActive = item.classList.contains("active");
 
-    // Close other items
+    // close all other FAQs
     faqItems.forEach((otherItem) => {
       if (otherItem !== item) {
         otherItem.classList.remove("active");
@@ -217,7 +232,7 @@ faqItems.forEach((item) => {
       }
     });
 
-    // Toggle current item
+    // toggle the clicked one
     if (!isActive) {
       item.classList.add("active");
       const answer = item.querySelector(".faq_answer");
@@ -229,10 +244,10 @@ faqItems.forEach((item) => {
   });
 });
 
-// Footer Section Scroll to Top
+// scroll to top button
 const scroll_top_btn = document.querySelector(".scroll_top");
 
-// Show/Hide button
+// show button after scrolling down a bit
 window.addEventListener("scroll", () => {
   if (window.scrollY > 400) {
     scroll_top_btn.style.opacity = "1";
@@ -243,7 +258,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Smooth Scroll
+// smooth scroll to top when clicked
 scroll_top_btn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,

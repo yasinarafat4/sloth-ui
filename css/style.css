@@ -14,6 +14,22 @@ html {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+/* Skip link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 :root {
   /* Colors */
   --color-primary: #4f46e5;
@@ -43,6 +59,10 @@ html {
   --fw-semibold: 600;
   --fw-bold: 700;
   --fw-extrabold: 800;
+
+  /* Section Padding */
+  --section-padding-lg: 96px 16px;
+  --section-padding-md: 64px 16px;
 
   /* Border Radius */
   --radius-full: 999px;
@@ -242,7 +262,7 @@ html {
 
 /* Hero Section Styles */
 .section_hero {
-  background-image: url("../assets/images/hero/background-wallpaper-gradient.png");
+  background-image: url("/assets/images/hero/background-wallpaper-gradient.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -343,7 +363,7 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  padding: 96px 16px;
+  padding: var(--section-padding-lg);
 }
 
 .features_header {
@@ -523,7 +543,7 @@ html {
   flex-direction: column;
   align-items: start;
   gap: 64px;
-  padding: 96px 16px;
+  padding: var(--section-padding-lg);
 }
 
 .client_header {
@@ -645,7 +665,7 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  padding: 96px 16px;
+  padding: var(--section-padding-lg);
 }
 
 .testimonials_header {
@@ -757,7 +777,7 @@ html {
   flex-direction: column;
   align-items: start;
   gap: 64px;
-  padding: 64px 16px;
+  padding: var(--section-padding-md);
 }
 
 .contact_header {
@@ -836,7 +856,7 @@ html {
   max-width: 800px;
   margin: auto;
   gap: 48px;
-  padding: 96px 16px;
+  padding: var(--section-padding-lg);
 }
 
 .faq_header {
@@ -1021,7 +1041,7 @@ html {
 
 .footer_wrapper {
   position: relative;
-  padding: 96px 16px;
+  padding: var(--section-padding-lg);
 }
 
 .footer-grid {
@@ -1146,7 +1166,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 64px 16px;
+    padding: var(--section-padding-md);
     max-height: 653px;
   }
 
@@ -1299,7 +1319,7 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 48px;
-    padding: 64px 16px;
+    padding: var(--section-padding-md);
   }
 
   .features_header {
@@ -1345,7 +1365,7 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 64px;
-    padding: 64px 16px;
+    padding: var(--section-padding-md);
   }
 
   .stats_header {
@@ -1399,7 +1419,7 @@ html {
     flex-direction: column;
     align-items: start;
     gap: 40px;
-    padding: 96px 16px;
+    padding: var(--section-padding-lg);
   }
 
   .client_tabs {
@@ -1421,7 +1441,7 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    padding: 64px 16px;
+    padding: var(--section-padding-md);
   }
 
   .testimonials_grid {
@@ -1491,7 +1511,7 @@ html {
     align-items: center;
     margin: auto;
     gap: 40px;
-    padding: 64px 16px;
+    padding: var(--section-padding-md);
   }
 
   .faq_header {
@@ -1554,7 +1574,7 @@ html {
   /* Footer Section Styles */
   .footer_wrapper {
     position: relative;
-    padding: 64px 16px;
+    padding: var(--section-padding-md);
   }
 
   .footer-grid {
@@ -1669,7 +1689,7 @@ html {
 
   /* CTA Section Styles */
   .section_cta {
-    padding: 64px 16px 0 16px;
+    padding: var(--section-padding-md) 0 16px;
     max-height: 100%;
   }
 
