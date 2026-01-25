@@ -17,7 +17,7 @@
   --color-text-muted: #475569;
   --color-border: #cbd5e1;
   --color-white: #ffffff;
-  --color-bg-mobile: #f8fafc;
+  --color-section-bg: #f8fafc;
   --color-shadow: rgba(15, 23, 42, 0.15);
 
   /* Font Sizes */
@@ -238,6 +238,7 @@
 /* Social Proof Section Styles */
 .section_social_proof {
   padding: 64px 0;
+  background: var(--color-section-bg);
 }
 
 .logo-flex {
@@ -341,7 +342,12 @@
 }
 
 /* Statistics Section Styles */
+
 .section_stats {
+  background: var(--color-section-bg);
+}
+
+.stats_wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -349,6 +355,7 @@
   gap: 64px;
   padding: 96px 0;
   max-width: 800px;
+  margin: auto;
 }
 
 .stats_header {
@@ -554,6 +561,10 @@
 
 /* Testimonial Section Styles  */
 .section_testimonials {
+  background: var(--color-section-bg);
+}
+
+.testimonials_wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -595,15 +606,15 @@
   width: 100%;
 }
 
-.card {
+.testimonial-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
   gap: 24px;
   max-width: 384px;
-  height: 284px;
-  background: var(--color-bg-mobile);
+  height: fit-content;
+  background: var(--color-section-bg);
   border: 1px solid #e2e8f0;
   border-radius: 24px;
 }
@@ -737,6 +748,10 @@
 
 /* FAQ Section Styles */
 .section_faq {
+  background: var(--color-section-bg);
+}
+
+.faq_wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -861,6 +876,9 @@
   background: var(--color-primary-light);
 }
 
+.cta_wrapper {
+}
+
 .cta_content {
   display: flex;
   max-width: 560px;
@@ -894,7 +912,7 @@
 .cta-mockup-left-img {
   position: absolute;
   right: 180px;
-  height: 600px;
+  height: 608px;
   width: fit-content;
   top: 45px;
   bottom: 0;
@@ -913,7 +931,12 @@
 }
 
 /* Footer Section Styles */
+
 .section_footer {
+  background: var(--color-section-bg);
+}
+
+.footer_wrapper {
   position: relative;
   padding: 96px 16px;
 }
@@ -1009,6 +1032,10 @@
   color: #94a3b8;
 }
 
+/* =====================
+   Responsive Designs
+===================== */
+
 @media (max-width: 1024px) {
   /* Contact Section Styles */
   .location_grid {
@@ -1081,7 +1108,7 @@
     top: 75px;
     left: 0;
     width: 100%;
-    background: var(--color-bg-mobile);
+    background: var(--color-section-bg);
     box-shadow: 0 12px 24px var(--color-shadow);
 
     /* Animation setup: start state */
@@ -1221,7 +1248,7 @@
   }
 
   /* Statistics Section Styles */
-  .section_stats {
+  .stats_wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1297,7 +1324,7 @@
   }
 
   /* Testimonial Section Styles  */
-  .section_testimonials {
+  .testimonials_wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1348,7 +1375,7 @@
   }
 
   /* FAQ Section Styles */
-  .section_faq {
+  .faq_wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1384,7 +1411,6 @@
   }
 
   /* CTA Section Styles */
-
   .cta_title {
     font-weight: var(--fw-extrabold);
     font-size: var(--fs-3xl);
@@ -1414,7 +1440,7 @@
   }
 
   /* Footer Section Styles */
-  .section_footer {
+  .footer_wrapper {
     position: relative;
     padding: 64px 16px;
   }
@@ -1452,10 +1478,6 @@
   }
 
   /* Statistics Section Styles */
-  .section_stats {
-    padding: 64px 0;
-  }
-
   .statistics {
     width: 100%;
     display: flex;
