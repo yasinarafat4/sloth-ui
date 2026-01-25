@@ -1,7 +1,7 @@
-/* Google fonts url */
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap");
+/* Google Fonts URL */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
-/* Global styles */
+/* Global Styles */
 html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
@@ -14,7 +14,7 @@ html {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* Skip link for screen readers */
+/* Skip Link for Screen Readers */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -210,13 +210,6 @@ html {
   align-items: center;
   justify-content: space-between;
   flex: 1;
-}
-
-/* Logo Image */
-.logo img {
-  /* width: 109px;
-  height: 32px; */
-  object-fit: contain;
 }
 
 .nav {
