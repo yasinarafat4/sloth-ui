@@ -1,44 +1,44 @@
-// mobile menu
+// Mobile Menu
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 const header = document.querySelector(".navbar");
 const navLinks = document.querySelectorAll(".nav a");
 
-// toggle menu open/close
+// Toggle Menu open/close
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
 });
 
-// close menu when clicking nav links
+// Close Menu when Clicking Nav Links
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     mobileMenu.classList.remove("active");
   });
 });
 
-// close menu if click outside
+// Close Menu if Click Outside
 document.addEventListener('click', (e) => {
   if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
     mobileMenu.classList.remove('active');
   }
 });
 
-// add shadow to navbar on scroll
+// Add Shadow to Navbar on Scroll
 window.addEventListener("scroll", () => {
   const isScrolled = window.scrollY > 20;
   header.classList.toggle("scrolled", isScrolled);
 });
 
-// counter animation
+// Counter Animation
 const observerOptions = {
-  threshold: 0.5  // trigger when half visible
+  threshold: 0.5  // Trigger when Half Visible
 };
 
 const counterObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       startCounter(entry.target);
-      observer.unobserve(entry.target);  // stop watching after it starts
+      observer.unobserve(entry.target);  // Stop Watching after it Starts
     }
   });
 }, observerOptions);
@@ -73,25 +73,25 @@ document.querySelectorAll(".counter").forEach((counter) => {
   counterObserver.observe(counter);
 });
 
-// switch images on click
+// Switch Images on Click
 const client_tabs = document.querySelectorAll(".client_tab_item");
 const client_display_img = document.getElementById("client_main_img");
 
 client_tabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    // remove active from all tabs
+    // Remove Active from All Tabs
     client_tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     
     const newImageSrc = tab.getAttribute('data_image');
     
-    // fade out current image
+    // Fade-out Current Image
     Object.assign(client_display_img.style, {
       opacity: '0',
       transform: 'scale(0.98)'
     });
 
-    // swap image and fade in
+    // Swap Image and Fade-in
     setTimeout(() => {
       client_display_img.src = newImageSrc;
       Object.assign(client_display_img.style, {
@@ -102,7 +102,7 @@ client_tabs.forEach(tab => {
   });
 });
 
-// testimonials data
+// Testimonials Data
 const testimonials = [
   {
     name: "X_AE_A-13",
@@ -180,7 +180,7 @@ const testimonials = [
 
 const grid = document.getElementById("testimonial-grid");
 
-// render all testimonials
+// Render all Testimonials
 grid.innerHTML = testimonials
   .map(
     (item) => `
@@ -188,7 +188,7 @@ grid.innerHTML = testimonials
     <div class="rating">
   ${[1, 2, 3, 4, 5]
     .map((starIndex) => {
-      // figure out which star icon to show
+      // Figure out which Star Icon to Show
       let starSrc = "";
       if (item.rating >= starIndex) {
         starSrc = "/assets/icons/testimonials/star-filled-icon.svg";
@@ -215,7 +215,7 @@ grid.innerHTML = testimonials
   )
   .join("");
 
-// FAQ accordion
+// FAQ Accordion
 const faqItems = document.querySelectorAll(".faq_item");
 
 faqItems.forEach((item) => {
@@ -224,7 +224,7 @@ faqItems.forEach((item) => {
   question.addEventListener("click", () => {
     const isActive = item.classList.contains("active");
 
-    // close all other FAQs
+    // Close all Other FAQs
     faqItems.forEach((otherItem) => {
       if (otherItem !== item) {
         otherItem.classList.remove("active");
@@ -232,7 +232,7 @@ faqItems.forEach((item) => {
       }
     });
 
-    // toggle the clicked one
+    // Toggle the Clicked one
     if (!isActive) {
       item.classList.add("active");
       const answer = item.querySelector(".faq_answer");
@@ -244,10 +244,9 @@ faqItems.forEach((item) => {
   });
 });
 
-// scroll to top button
+// Scroll to Top Button
 const scroll_top_btn = document.querySelector(".scroll_top");
 
-// show button after scrolling down a bit
 window.addEventListener("scroll", () => {
   if (window.scrollY > 400) {
     scroll_top_btn.style.opacity = "1";
@@ -258,7 +257,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// smooth scroll to top when clicked
+// Smooth Scroll When Clicked
 scroll_top_btn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
