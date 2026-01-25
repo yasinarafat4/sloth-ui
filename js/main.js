@@ -36,7 +36,7 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
   });
 }, observerOptions);
 
-function startCounter(el) {
+const startCounter = (el) => {
   const target = parseFloat(el.getAttribute("data-target"));
   const suffix = el.getAttribute("data-suffix") || "";
   const decimals = parseInt(el.getAttribute("data-decimals")) || 0;

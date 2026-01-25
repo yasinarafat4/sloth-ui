@@ -1093,6 +1093,7 @@ html {
   }
 
   .testimonial-card {
+    padding: 20px;
     break-inside: avoid;
     width: 100%;
     margin-bottom: 20px;
@@ -1585,6 +1586,7 @@ html {
   }
 
   .testimonial-card {
+    padding: 20px;
     break-inside: avoid;
     width: 100%;
     margin-bottom: 16px;
